@@ -18,7 +18,7 @@ const ProgressBar: React.FC = () => {
           className={styles.progressContainer_bar_percentage}
           variant="span"
         >
-          {Math.round(progress)}%
+          {progress}%
         </Typography>
       </div>
     </div>
