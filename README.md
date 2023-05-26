@@ -13,9 +13,9 @@ The TaskProgresser App is a simple web application that allows users to manage t
 1. Clone the repository:
    -git clone [repository_url]
 
-2.Install the dependencies:
--cd [project_directory]
--npm install
+2. Install the dependencies:
+   -cd [project_directory]
+   -npm install
 
 3. Run the App:
    -npm start or yarn start
