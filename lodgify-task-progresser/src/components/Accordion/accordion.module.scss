@@ -1,0 +1,8 @@
+@import "../../styles/variables";
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $border-gray;
+  border-radius: 0.8rem;
+}

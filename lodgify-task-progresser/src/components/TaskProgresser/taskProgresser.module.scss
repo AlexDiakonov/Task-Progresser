@@ -1,0 +1,14 @@
+.taskProgresser__container {
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem;
+  margin: 0 auto;
+  width: 82rem;
+  max-width: 90%;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  &_header {
+    padding: 0 2.4rem 0 2.4rem;
+  }
+}
