@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
 import styles from "./typography.module.scss";
-import { log } from "console";
 
 interface TypographyProps {
   className?: string;
