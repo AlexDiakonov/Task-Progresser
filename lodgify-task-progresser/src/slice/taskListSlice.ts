@@ -5,12 +5,12 @@ import {
   createSlice,
 } from "@reduxjs/toolkit";
 import { RootState } from "../store";
-import { TaskItem } from "../interfaces/TaskList.interfaces";
+import { TaskItemInterface } from "../interfaces/TaskList.interfaces";
 import { getTaskList } from "../services/getTaskList";
 import { taskIdGenerator } from "../utils/taskListSliceUtils";
 
 interface TaskListSliceInterface {
-  taskItems: TaskItem[];
+  taskItems: TaskItemInterface[];
   isLoading: boolean;
   error: string | null;
 }

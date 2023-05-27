@@ -1,28 +1,22 @@
 import React, { useState } from "react";
-import { TaskItem, Task } from "../../interfaces/TaskList.interfaces";
-import { useDispatch } from "react-redux";
-import { updateTaskStatus } from "../../slice/taskListSlice";
+import { TaskItemInterface, Task } from "../../interfaces/TaskList.interfaces";
 import Typography from "../Typography/Typography";
 import styles from "./accordionItem.module.scss";
 import { ReactComponent as Show } from "../../assets/icons/show.svg";
 import { ReactComponent as GroupIcon } from "../../assets/icons/groupIcon.svg";
+import TaskItem from "../TaskItem/TaskItem";
 
 interface AccordionItemProps {
-  taskGroup: TaskItem;
+  taskGroup: TaskItemInterface;
 }
 
 const AccordionItem: React.FC<AccordionItemProps> = ({ taskGroup }) => {
   const [expanded, setExpanded] = useState(false);
-  const dispatch = useDispatch();
+  console.log(taskGroup);
 
   //dropDown handler
   const handleExpand = () => {
     setExpanded(!expanded);
-  };
-
-  //dispatch update task checked status
-  const handleCheckboxChange = (taskId: string) => {
-    dispatch(updateTaskStatus({ groupId: taskGroup.id || "", taskId }));
   };
 
   return (
@@ -65,31 +59,13 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ taskGroup }) => {
       {expanded && (
         <ul className={styles.accordion_item_taskList}>
           {taskGroup.tasks.map((task: Task) => (
-            <li key={task.id} className={styles.accordion_item_taskList_task}>
-              <label
-                htmlFor={task.id}
-                className={styles.accordion_item_taskList_task_label}
-              >
-                <input
-                  type="checkbox"
-                  id={task.id}
-                  checked={task.checked}
-                  onChange={() => handleCheckboxChange(task.id || "")}
-                  className={styles.accordion_item_taskList_task_label_checkbox}
-                />
-                <div
-                  className={
-                    styles.accordion_item_taskList_task_label_checkmark
-                  }
-                ></div>
-                <Typography
-                  className={styles.accordion_item_taskList_task_label_text}
-                  variant="span"
-                >
-                  {task.description}
-                </Typography>
-              </label>
-            </li>
+            <TaskItem
+              key={task.id}
+              id={task.id || ""}
+              groupTaskId={taskGroup.id || ""}
+              checked={task?.checked}
+              description={task?.description}
+            />
           ))}
         </ul>
       )}

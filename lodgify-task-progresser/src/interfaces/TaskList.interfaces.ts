@@ -5,7 +5,7 @@ export interface Task {
   checked: boolean;
 }
 
-export interface TaskItem {
+export interface TaskItemInterface {
   name: string;
   id?: string;
   tasks: Task[];

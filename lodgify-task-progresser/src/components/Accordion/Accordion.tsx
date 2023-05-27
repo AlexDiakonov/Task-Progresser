@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./accordion.module.scss";
 import AccordionItem from "../AccordionItem/AccordionItem";
-import { TaskItem } from "../../interfaces/TaskList.interfaces";
+import { TaskItemInterface } from "../../interfaces/TaskList.interfaces";
 
 interface AccordionProps {
-  taskGroups: TaskItem[];
+  taskGroups: TaskItemInterface[];
 }
 
 const Accordion: React.FC<AccordionProps> = ({ taskGroups }) => {
